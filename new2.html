@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Personal Homepage</title>
+
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: black;
+            transition: background 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #333;
+            color: white;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 10px auto;
+            border: 3px solid black;
+            object-fit: cover;
+        }  
+        section {
+            padding: 20px;
+            margin: 10px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s, color 0.3s;
+        }
+        body.dark-mode section {
+            background: #444;
+            color: white;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        body.dark-mode a {
+            color: lightblue;
+        }
+        button {
+            background: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #555;
+        }
+        .quote {
+            font-style: italic;
+            font-size: 1.2em;
+            color: darkgreen;
+            text-align: center;
+        }
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+        .uni-image {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+
+    <script type="text/javascript">
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function updateLastModified() {
+            document.getElementById("lastModified").textContent = document.lastModified;
+        }
+
+        function displayLocation() {
+            document.getElementById("location").textContent = "Page URL: " + window.location.href;
+        }
+
+        window.onload = function() {
+            updateLastModified();
+            displayLocation();
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1><strong>Mausuf Wasek</strong></h1>
+        <!-- Local Image -->
+        <img src="mypic.jpg" alt="My Picture" class="profile-pic" />
+        <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#favorites">Favorites</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p><strong>Hello</strong>, I am an <em>undergraduate student</em> at  
+        <span style="color: blue;">BRAC University</span> managing university life while fasting.</p>
+        <p class="quote">"<span class="highlight">Failure</span> is what? <span class="highlight">Look</span> at the mirror and  
+        <strong>Go</strong> <span class="highlight"> </span>DIE"</p>
+    </section>
+
+    <section id="hobbies">
+        <h2>Hobbies</h2>
+        <ul>
+            <li>Reading Books</li>
+            <li>Playing Football</li>
+            <li>Traveling</li>
+        </ul>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <table>
+            <tr>
+                <th>Institution</th>
+                <th>Degree</th>
+                <th>Year</th>
+            </tr>
+            <tr>
+                <td>BRAC University</td>
+                <td>BSc in Computer Science</td>
+                <td>2025 - Present</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="favorites">
+        <h2>Top 5 Favorite Movies</h2>
+        <ol>
+            <li>Inception</li>
+            <li>The Dark Knight</li>
+            <li>Interstellar</li>
+            <li>Shawshank Redemption</li>
+            <li>Spirited Away</li>
+        </ol>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required="required" />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required="required" />
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required="required"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <section id="links">
+        <h2>Useful Links</h2>
+        <h3>External Links</h3>
+        <ul>
+            <li><a href="https://www.bracu.ac.bd/" target="_blank">BRAC University</a></li>
+            <li>Here is the <a href="https://discord.gg/d5yxYtJ5" target="_blank">CSE 391 Discord</a></li>
+        </ul>
+
+        <h3>Internal Links</h3>
+        <ul>
+            <li><a href="#about">Go to About Me</a></li>
+            <li><a href="#education">Jump to Education</a></li>
+            <li><a href="#favorites">See my Favorite Movies</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mausuf Wasek</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+        <p id="location"></p>
+        <!-- University Image at the Last -->
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3d/BRAC_University_Logo.svg" alt="BRAC University Logo" class="uni-image" />
+    </footer>
+</body>
+</html>
